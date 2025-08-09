@@ -7,6 +7,7 @@ body{
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-textColor:#6D6B7B;
   --color-navbarBackground:#1A192E;
   --color-Primary:#861FDB;
   --radius-sm: calc(var(--radius) - 4px);
