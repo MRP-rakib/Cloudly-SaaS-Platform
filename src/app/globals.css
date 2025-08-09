@@ -8,7 +8,7 @@ body{
 
 @theme inline {
   --color-navbarBackground:#1A192E;
-  --color-btncolor:#861FDB;
+  --color-Primary:#861FDB;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
