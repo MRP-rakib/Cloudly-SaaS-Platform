@@ -28,12 +28,13 @@ type MobileMenuProps = {
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <nav className="py-2.5 bg-navbarBackground relative">
-      <Container>
+    <nav className="py-2.5 bg-navbarBackground fixed w-full top-0 left-0 z-50">
+     <div className="relative">
+       <Container>
         <div className="flex items-center justify-between">
           <Logo />
 
-          <ul className="hidden xl:flex items-center gap-10 uppercase text-white text-base font-medium transition-all duration-300">
+          <ul className="hidden lg:flex items-center gap-10 uppercase text-white text-base font-medium transition-all duration-300">
             <li>
               <Link href='/'>Home</Link>
             </li>
@@ -65,15 +66,16 @@ function Navbar() {
               <Link href='/'>Contact us</Link>
             </li>
           </ul>
-          <span onClick={() => setMenuOpen(true)} className="text-white text-4xl md:text-5xl lg:text-6xl inline xl:hidden">
+          <span onClick={() => setMenuOpen(true)} className="text-white text-4xl md:text-5xl lg:text-6xl inline lg:hidden">
             <HiOutlineMenuAlt4 />
           </span>
           <Button className="hidden text-base font-bold !px-5 !py-6 rounded-full bg-Primary hover:bg-navbarBackground
            hover:border-x border-x border-transparent hover:border-white transition-all cursor-pointer
-            duration-300 xl:flex items-center gap-4">Get a quote <FaArrowRightLong /></Button>
+            duration-300 lg:flex items-center gap-4">Get a quote <FaArrowRightLong /></Button>
         </div>
       </Container>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+     </div>
     </nav>
   )
 }
@@ -81,7 +83,7 @@ function Navbar() {
 function MobileMenu({ menuOpen, setMenuOpen }: MobileMenuProps) {
   const [submenu, setSubmenu] = useState(false)
   return (
-    <div className={`bg-[rgba(0,0,0,0.5)] h-[100vh] ${menuOpen && 'w-full opacity-100 visible'} w-0 transition-all duration-300 flex justify-end  opacity-0 invisible xl:hidden absolute top-0 right-0 overflow-x-hidden`}>
+    <div className={`bg-[rgba(0,0,0,0.5)] h-[100vh] ${menuOpen && 'w-full opacity-100 visible'} w-0 transition-all duration-300 flex justify-end  opacity-0 invisible lg:hidden absolute top-0 right-0 overflow-x-hidden`}>
       <div className=" w-full sm:w-[60%] md:w-[50%] bg-white p-5 flex flex-col gap-10 transition-all duration-300 overflow-y-auto">
         <div className="flex items-center justify-between">
           <Logo fill="#7D1FE3" fill1="black" />
@@ -156,19 +158,19 @@ function MobileMenu({ menuOpen, setMenuOpen }: MobileMenuProps) {
           </div>
         </div>
         <div className="flex items-center justify-center gap-5">
-          <Link href='https://www.facebook.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary border flex items-center justify-center text-2xl">
+          <Link href='https://www.facebook.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary hover:text-white border flex items-center justify-center text-2xl">
             <BiLogoFacebook />
 
           </Link>
-          <Link href='https://www.x.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary border flex items-center justify-center text-2xl">
+          <Link href='https://www.x.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary hover:text-white border flex items-center justify-center text-2xl">
             <RiTwitterXFill />
 
           </Link>
-          <Link href='https://www.youtube.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary border flex items-center justify-center text-2xl">
+          <Link href='https://www.youtube.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary hover:text-white border flex items-center justify-center text-2xl">
             <FaYoutube />
 
           </Link>
-          <Link href='https://www.linkedin.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary border flex items-center justify-center text-2xl">
+          <Link href='https://www.linkedin.com' target="_blank" className="w-[44px] h-[44px] rounded bg-[rgba(0,0,0,0.03)] hover:bg-Primary hover:text-white border flex items-center justify-center text-2xl">
             <FaLinkedinIn />
 
           </Link>
